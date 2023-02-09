@@ -1,0 +1,16 @@
+version: "0"
+name: quiz-app
+services:
+  develop:
+    image: vainilla-ts/dev
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: quiz-app
+    volumes:
+      - .:/app
+      - ./src:/app
+      - ./public:/app
+      - ./node_modules:/app
+    ports:
+      - 5789:5173
